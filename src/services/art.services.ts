@@ -18,19 +18,19 @@ export const getBucket = async():Promise<any> => {
   const images =  s3.listObjects({Bucket:String(bucket)}).promise();
 
   await objectUrl.then(data =>{
-      console.log(data)
+      // console.log(data)
   }).catch(err=>{
       throw err
   })
 
-  await object.then(data=>{
-    //   console.log(data)
-  }).catch(err=>{
-      throw err;
-  });
+  // await object.then(data=>{
+  //     console.log(data)
+  // }).catch(err=>{
+  //     throw err;
+  // });
 
   return await images.then((data)=>{
-    //   console.log(data)
+      console.log(data)
       return data;
   }).catch(err=>{
       console.log(err)
