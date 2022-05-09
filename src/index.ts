@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express,{Response,Request} from 'express'
 import artRouter from './routes/art.routes';
 import helmet from 'helmet';
