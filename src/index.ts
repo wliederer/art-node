@@ -1,9 +1,16 @@
 import express,{Response,Request} from 'express'
+import artRouter from './routes/art.routes';
+import helmet from 'helmet';
 
 const app = express();
 const port = 8080;
 
-app.get("/",(req:Request,res:Response)=>{
+app.use(helmet())
+app.use(express.json())
+
+app.use(artRouter)
+
+app.get("/health",(req:Request,res:Response)=>{
   res.send('ok')
 })
 
