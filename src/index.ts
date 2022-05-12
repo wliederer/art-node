@@ -4,6 +4,8 @@ import artRouter from "./routes/art.routes";
 import helmet from "helmet";
 import morgan from "morgan";
 import cors from "cors";
+import passport from "passport";
+import Strategy from "passport-auth-token";
 import { publicCorsConfig } from "./constants/corsOptions";
 
 const app = express();
@@ -13,6 +15,17 @@ app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
+passport.use(
+  "token",
+  new Strategy(async (token, done) => {
+    if (token && token === process.env.TOKEN) {
+      return done(null, token);
+    } else {
+      return done(null, false);
+    }
+  })
+);
 
 app.use(artRouter);
 
