@@ -4,8 +4,9 @@ import { getBucket } from "../services/art.services";
 export const artAws = async (req: Request, res: Response) => {
   try {
     return await getBucket().then((data) => {
-      Promise.all(data).then((stuff) => {
-        return res.send(stuff);
+      let names = data.names;
+      Promise.all(data.signedUrls).then((stuff) => {
+        return res.send({ names, stuff });
       });
     });
   } catch (err) {

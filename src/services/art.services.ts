@@ -14,10 +14,19 @@ const s3 = new AWS.S3({});
 
 export const getBucket = async (): Promise<any> => {
   let signedUrls;
+  let artNames: string[] = [];
   const images = s3.listObjects({ Bucket: "billsart" }).promise();
 
   const awsObjects = await images
     .then(async (data: S3.ListObjectsOutput) => {
+      data.Contents?.forEach((obj, i) => {
+        if (i > 0) {
+          let name = obj.Key?.split("/");
+          artNames.push(
+            name && name[1] ? name[1].substring(0, name[1].length - 5) : ""
+          );
+        }
+      });
       return data;
     })
     .catch((err) => {
@@ -34,7 +43,10 @@ export const getBucket = async (): Promise<any> => {
       }
     });
   }
-  return signedUrls;
+  return {
+    names: artNames,
+    signedUrls,
+  };
 };
 
 const getUrl = async (key: string) => {
