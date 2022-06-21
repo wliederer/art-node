@@ -6,7 +6,7 @@
   "scripts": {
     "start": "yarn build && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf ./dist && npx tsc"
+    "build": "rimraf ./dist &&  tsc"
   },
   "keywords": [],
   "author": "",
