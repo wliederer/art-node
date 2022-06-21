@@ -9,7 +9,7 @@ import Strategy from "passport-auth-token";
 import { publicCorsConfig } from "./constants/corsOptions";
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
 app.use(morgan("combined"));
 app.use(helmet());
 app.use(express.json());
