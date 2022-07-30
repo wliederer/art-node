@@ -58,6 +58,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.31.tgz#a5bb84ecfa27eec5e1c802c6bbf8139bdb163a5d"
   integrity sha512-AR0x5HbXGqkEx9CadRH3EBYx/VkiUgZIhP4wvPn/+5KIsgpNoyFaRlVe0Zlx9gRtg8fA06a9tskE2MSN7TcG4Q==
 
+"@types/node@>=8.1.0":
+  version "18.6.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.6.2.tgz#ffc5f0f099d27887c8d9067b54e55090fcd54126"
+  integrity sha512-KcfkBq9H4PI6Vpu5B/KoPeuVDAbmi+2mDBqGPGUgoL7yXQtcWGu2vJWmmRkneWK3Rh0nIAX192Aa87AqKHYChQ==
+
 "@types/passport-auth-token@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/passport-auth-token/-/passport-auth-token-1.0.1.tgz#c9197760d2d2e8255d6962cbbb805b6dae2920c6"
@@ -605,6 +610,13 @@ qs@6.10.3:
   dependencies:
     side-channel "^1.0.4"
 
+qs@^6.10.3:
+  version "6.11.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.11.0.tgz#fd0d963446f7a65e1367e01abd85429453f0c37a"
+  integrity sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==
+  dependencies:
+    side-channel "^1.0.4"
+
 querystring@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
@@ -704,6 +716,14 @@ statuses@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-2.0.1.tgz#55cb000ccf1d48728bd23c685a063998cf1a1b63"
   integrity sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==
+
+stripe@^9.16.0:
+  version "9.16.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-9.16.0.tgz#94c24549c91fced457b9e3259e8a1a1bdb6dbd0e"
+  integrity sha512-Dn8K+jSoQcXjxCobRI4HXUdHjOXsiF/KszK49fJnkbeCFjZ3EZxLG2JiM/CX+Hcq27NBDtv/Sxhvy+HhTmvyaQ==
+  dependencies:
+    "@types/node" ">=8.1.0"
+    qs "^6.10.3"
 
 toidentifier@1.0.1:
   version "1.0.1"
